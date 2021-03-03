@@ -4,6 +4,10 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Building...'
+        node(label: 'build dock image') {
+          sh 'docker build -t build .'
+        }
+
       }
     }
 
