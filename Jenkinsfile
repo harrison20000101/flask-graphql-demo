@@ -1,10 +1,27 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'Dockerfile'
+    }
+
+  }
   stages {
-    stage('') {
+    stage('Build') {
       steps {
-        echo 'pulling latest changes...'
-        git(branch: 'main', changelog: true, url: 'https://github.com/harrison20000101/flask-graphql-demo.git')
+        echo 'Building...'
+        sh 'docker build'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        echo 'Testing...'
+      }
+    }
+
+    stage('Depoly') {
+      steps {
+        echo 'Deploying...'
       }
     }
 
