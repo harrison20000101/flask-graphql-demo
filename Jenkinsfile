@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building...'
+        echo 'Running ${env.BUILD_ID} on ${env.JENKINS_URL}'
         node(label: 'build dock image') {
           sh 'docker build -t build .'
         }
