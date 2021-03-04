@@ -4,7 +4,6 @@ pipeline {
     stage('Depoly') {
       steps {
         echo 'Deploying to AWS EC2'
-        sh 'sh'
       }
     }
 
