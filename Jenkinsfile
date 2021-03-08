@@ -1,11 +1,20 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'python'
+    }
+
+  }
   stages {
-    stage('Depoly') {
+    stage('Build') {
       steps {
-        echo 'Deploying to AWS EC2'
+        sh '''RUN pip install -r requirements.txt
+'''
       }
     }
 
+  }
+  environment {
+    CI = 'True'
   }
 }
