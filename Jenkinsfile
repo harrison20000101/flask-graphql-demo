@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       args '-p 80:5000'
-      image 'docpython:3.10.0a6-windowsservercore-ltsc2016'
+      image 'python:3.10.0a6-alpine3.13'
     }
 
   }
