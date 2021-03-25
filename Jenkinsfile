@@ -7,13 +7,14 @@ pipeline {
         echo 'Build'
       }
     }
-    
+
     stage('Test') {
       steps {
-        hygieiaBuildPublishStep buildStatus: 'Success'
+        hygieiaBuildPublishStep(buildStatus: 'Success')
         echo 'Integration Testing'
       }
     }
+
     stage('Depoly') {
       steps {
         echo 'Deploying to AWS EC2'
