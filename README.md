@@ -1,4 +1,4 @@
-## A Flask CI/CD Demo
+## Flask CI/CD Demo
 # Build the image
 docker build -t flask-web:latest .
 
